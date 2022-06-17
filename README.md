@@ -24,13 +24,13 @@ So yes sometimes the code will be unecessarily complex because it is only an iso
 2) Tap any item tile
 3) Tap the floating action button to change the widget's status
 4) Go back to item list
-    - Item is not updated?
+    - Item tile is not updated? (I am expecting it to be rebuild/rerendered)
 
-But clearly the item from the item list was modified after catching the `ItemChangedNotification`...
-Yet the `ItemTile` will not rerender its child `ItemTileTitle` (I'd love to know the reason)
+The item list was definitely modified after catching the `ItemChangedNotification` in the `NotificationListener`.
+Yet, when the `ListView.builder` will rebuild its elements, the modified `ItemTile` will not rerender its child `ItemTileTitle` who is in charge of showing the item's status.
 
 [I am thinking this could be the reason why](https://jelenaaa.medium.com/how-to-force-widget-to-redraw-in-flutter-2eec703bc024)
-but I am not certain because this looks more like an issue linked to me passing data to my childrens using a `Provider` which could lead Flutter to think there was no actual state change...  
+but I am not certain because this could also be an issue linked to me passing data to my childrens using a `Provider` which could lead Flutter to think there was no actual state change...  
 But I'm not sure.
 
 This current part describes my main problem. Anything below are more errors caused by me trying to fix the above problem.
