@@ -33,6 +33,9 @@ Yet, when the `ListView.builder` will rebuild its elements, the modified `ItemTi
 but I am not certain because this could also be an issue linked to me passing data to my childrens using a `Provider` which could lead Flutter to think there was no actual state change...  
 But I'm not sure.
 
+Also could be because this is an issue related to the widget's lifecycle and how the `ItemTile` will not rebuild its child `ItemTileTitle` because nothing has really changed in the widget tree. Only the `Provider`'s value changed.
+But then why is the `context.select` from the `build` method of `ItemTileTitle` not rebuilding if the `Provider`'s value changed?
+
 This current part describes my main problem. Anything below are more errors caused by me trying to fix the above problem.
 
 ## The UniqueKey/ValueKey fix
