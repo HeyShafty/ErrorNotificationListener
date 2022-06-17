@@ -68,6 +68,8 @@ Widget _itemBuilder(BuildContext context, ItemModel item, int index) {
 
 My understanding of flutter is not advanced enough to accurately understand why this is happening :( so I hope someone can identify the problem! 
 
+I know that at least without the changes from this section, the `MyPageRoute` <> `NotificationListener` combo can successfully propagate notifications along the Navigation stack so I don't think the issue is directly related to that
+
 ```
 ════════ Exception caught by gesture ═══════════════════════════════════════════
 The following _CastError was thrown while handling a gesture:
