@@ -19,6 +19,8 @@ abstract class MyPageRoute<T> extends PageRoute<T> with MaterialRouteTransitionM
   Widget buildPage(BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
     final Widget result = buildContent(context);
 
+    // This NotificationListener ensures we can propagate notifications from upper pages to other lower pages without
+    // having to implement a custom Navigator stack
     return NotificationListener<BaseItemNotification>(
       onNotification: (notification) {
         _onNotification(notification);

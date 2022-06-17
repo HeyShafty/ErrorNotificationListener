@@ -31,8 +31,6 @@ class FirstPage extends StatefulWidget {
 }
 
 class FirstPageState extends State<FirstPage> {
-  final int listLength = 30;
-
   late final List<ItemModel> items;
 
   @override
@@ -50,6 +48,7 @@ class FirstPageState extends State<FirstPage> {
       body: NotificationListener<BaseItemNotification>(
         onNotification: (notification) {
           if (notification is ItemChangedNotification) {
+            print('Item ${notification.item} changed!');
             setState(() {
               items[notification.item.id] = notification.item;
             });
@@ -66,7 +65,8 @@ class FirstPageState extends State<FirstPage> {
   }
 
   Widget _itemBuilder(BuildContext context, ItemModel item, int index) {
-    return ItemTile(key: UniqueKey(), item: item);
+    print('Building item: $item');
+    return ItemTile(/* key: UniqueKey(), */ item: item);
   }
 }
 

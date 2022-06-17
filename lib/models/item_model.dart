@@ -19,4 +19,7 @@ class ItemModel {
       status: status ?? this.status,
     );
   }
+
+  @override
+  String toString() => 'ItemModel(id: $id, status: $status)';
 }
