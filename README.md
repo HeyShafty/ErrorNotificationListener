@@ -2,6 +2,10 @@
 
 Small code repo to illustrate by issue
 
+Some links:
+- [StackOverflow post](https://stackoverflow.com/questions/72660697/stateless-widgets-children-will-not-rebuild-after-a-model-update-when-passing-s)
+- [Flutter's github issue](https://github.com/flutter/flutter/issues/106198)
+
 ## Quick project description
 
 I am trying to create a global state management where model changes are broadcasted up
