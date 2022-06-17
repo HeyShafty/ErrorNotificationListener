@@ -66,7 +66,7 @@ class FirstPageState extends State<FirstPage> {
   }
 
   Widget _itemBuilder(BuildContext context, ItemModel item, int index) {
-    return ItemTile(item: item);
+    return ItemTile(key: UniqueKey(), item: item);
   }
 }
 
