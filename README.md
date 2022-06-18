@@ -154,3 +154,13 @@ Recognizer: TapGestureRecognizer#8a772
     sent tap down
 ════════════════════════════════════════════════════════════════════════════════
 ```
+
+### Update
+
+When pushing my `ItemDetailsPage`, I'm using the `ItemTile`'s `BuildContext` to pass the `onNotification` callback.
+But when rebuilding my `ItemTile` after a model change in the `ItemDetailsPage`, the `onNotification` will still be using the same `BuildContext` from an old (now unmounted) widget.
+Which is why the `NotificationListener` issues the above error.
+
+## Actual solution
+
+Check the `fixed` branch
